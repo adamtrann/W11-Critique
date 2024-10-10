@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Proportion of Total Forest Area Burnt, by Forest Category (%)",
+    "fontSize": 20
+  },
+  "width": 650,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/adamtrann/3179_assignment2/refs/heads/main/Resources/Data/forest_burn.csv"
+  },
+  "config": {
+    "background": "#f0f0f0",
+    "view": {
+      "stroke": null
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Jurisdiction"
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "Percent (%)",
+      "axis": {
+        "grid": false
+      }
+    },
+    "xOffset": {
+      "field": "Forest Category "
+    },
+    "color": {
+      "field": "Forest Category "
+    },
+    "tooltip": [
+      {
+        "field": "Jurisdiction",
+        "type": "nominal"
+      },
+      {
+        "field": "Forest Category ",
+        "type": "nominal"
+      },
+      {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Percentage of Forest Burnt (%)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Annual Rainfall (mm) from 1986 to 2021",
+    "fontSize": 20
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/adamtrann/3179_assignment2/refs/heads/main/Resources/Data/Average%20Rainfaill.csv"
+  },
+  "width": 600,
+  "height": 500,
+  "config": {
+    "background": "#f7f7f7",
+    "text": {
+      "font": "Times New Roman"
+    },
+    "view": {
+      "stroke": null
+    }
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": "All",   
+      "bind": {
+        "input": "select",  
+        "options": [
+          "All",
+          1986,
+          1987,   
+          1988,
+          1989,
+          1990,
+          1991,   
+          1992,
+          1993,
+          1994,
+          1995,
+          1996,
+          1997,   
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021
+        ],
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "selectedYear == 'All' || datum.Year == selectedYear"   
+    }
+  ],
+  "selection": {
+    "highlight": {
+      "type": "single",
+      "on": "mouseover",
+      "empty": "none",
+      "fields": ["Year"]
+    }
+  },
+  "mark": {
+    "type": "bar",
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {"labelAngle": 45, "grid": false}
+    },
+    "y": {
+      "field": "Rainfall (mm)",
+      "type": "quantitative",
+      "axis": {
+        "grid": false
+      }
+    },
+    "color": {
+      "condition": [
+        {
+          "test": "datum.Year == 2019",
+          "value": "black"
+        },
+        {
+          "selection": "highlight",
+          "value": "#ffcc00"
+        }
+      ],
+      "value": "steelblue"
+    },
+    "opacity": {
+      "condition": {
+        "selection": "highlight",
+        "value": 1
+      },
+      "value": 0.7
+    },
+    "tooltip": [
+      {"field": "Year", "title": "Year"},
+      {"field": "Rainfall (mm)", "title": "Rainfall (mm)"}
+    ]
+  }
+}

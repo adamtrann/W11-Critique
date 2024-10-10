@@ -1,0 +1,87 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Average Daily Air Quality: Sydney - 2019",
+    "fontSize": 20},
+  "width": 500,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/adamtrann/3179_assignment2/refs/heads/main/Resources/Data/AQI_NSW.csv"
+  },
+  "config": {
+    "background": "#f0f0f0",
+    "view": {
+      "stroke": null
+  }
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "monthdate",
+
+
+          "axis": {
+            "labelAngle": 45,
+            "title": "Date",
+            "grid": false,
+            "format": "%d-%b"  
+
+          }
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": {
+            "title": "PM2.5 µg/m3",
+            "grid": false
+          }
+        },
+        "color": {
+          "field": "Station",
+          "type": "nominal",
+          "legend": {"title": "Station"}
+        },
+        "opacity": {
+          "condition": {
+            "param": "station_highlight",
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date"},
+          {"field": "value", "type": "quantitative", "title": "PM2.5 (µg/m3)"},
+          {"field": "Station", "type": "nominal", "title": "Station"}
+        ]
+      },
+      "params": [
+        {
+          "name": "station_highlight",
+          "select": {"type": "point", "fields": ["Station"]},
+          "bind": "legend"
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeDash": [20, 10],   
+        "color": "black"
+      },
+      "encoding": {
+        "y": {
+          "datum": 12.5,        
+          "type": "quantitative"
+        },
+        "tooltip": {
+          "value": "Ceiling for 'Good' Air Quality: 12.5 PM2.5 µg/m3"
+          }
+
+        }
+      }
+  ]
+}

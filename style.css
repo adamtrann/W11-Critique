@@ -1,0 +1,130 @@
+.vis-container {
+    width: 100%; 
+    height: auto;  
+    margin-bottom: 35px;
+}
+
+.content {
+    text-align: center;
+    padding-top: 40px;
+}
+
+body {
+
+    background-color: #f0f0f0; 
+
+}
+
+h1 {
+    font-size: 50px;
+    font-family: 'Montserrat';
+    font-style: bold;
+    color: #D84315;
+    
+}
+h2 {
+    font-size: 35px;
+    font-family: 'Open Sans';
+    color: black;
+    font-weight: 900;
+}
+    
+h3 {
+    font-size: 25px;
+    font-family: 'Open Sans';
+    /* color: #A1887F; */
+    font-style: italic;
+    font-weight: 900;
+}
+
+
+
+p{
+    font-size: 28px;
+    font-family: 'Roboto';
+    text-align: center;
+    color: #37474F;
+
+}
+
+#emphasis {
+    font-weight: 900;   
+    font-size: 28px;
+    color: #D84315;
+  }
+
+  .images {
+    height: 100px;          /* Set a fixed height */
+    display: block;         /* Remove any potential space below the images */
+    margin: 0 auto;         /* Center the images horizontally */
+    margin-bottom: 35px;
+}
+
+.description {
+    text-align: center;     /* Align the text below each image */
+    margin-top: 30px;       /* Add spacing between the image and the paragraph */
+}
+
+
+.title {
+    background: #f0f0f0;
+    font-style: bold;
+    padding-left: 60px;
+    padding-right: 60px;
+  
+}
+
+.before{
+    background: #f7f7f7;
+
+}
+
+.during{
+    background-color: #f0f0f0;
+
+}
+
+.after{
+    background: #f7f7f7;
+
+}
+
+.before, .during, .after {
+    margin: 0;
+    padding: 0;
+    padding-left: 150px;   
+    padding-right: 150px;  
+}
+
+h1, h2, h3, p {
+    margin: 0;  
+    padding-top: 35px;  
+    padding-bottom: 35px;
+}
+
+.title-top{
+    padding-bottom: 0;
+    font-size: 60px;
+}
+
+.title-bottom{
+    padding-top: 20px;
+    font-size: 45px;
+}
+
+.footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.author{
+    font-family: 'Roboto';
+    padding-bottom: 20px;
+
+}
+
+.disclaimer{
+    font-style: italic;
+    text-align: right;
+}
